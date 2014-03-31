@@ -1,0 +1,13 @@
+body{
+  background-color: white;
+  font-family: helvetica, sans-serif;
+  font-weight: lighter;
+}
+#content{
+  text-align: center;
+  padding-top: 200px;
+  font-size:60px;
+}
+#yesno{
+  font-size : 100px;
+}
