@@ -2,10 +2,15 @@
 
 /* Controllers */
 
-var app = angular.module('canIRideMyBike', []);
-
-app.controller('WeatherCtrl', function ($scope) {
-  var weatherInfo = callAPI();
-  $scope.city = weatherInfo.name;
-  $scope.response = getResponse(weatherInfo);
+angular.module('canIRideMyBike', [])
+  .controller('WeatherCtrl', function ($scope) {
+  navigator.geolocation.getCurrentPosition(function(pos){
+    var coords = {lat : pos.coords.latitude, lng : pos.coords.longitude};
+    var weatherInfo = callAPI(coords.lat,coords.lng);
+    $scope.$apply(function(){
+      $scope.city = weatherInfo.name;
+      $scope.response = getResponse(weatherInfo);
+      $("#loading").toggle();
+    });
+  });
 });

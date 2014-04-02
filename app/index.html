@@ -12,10 +12,12 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body ng-controller="WeatherCtrl">
+    <div id="JSON" style="display:none;"></div>
     <div id="content" class="center-block">
-      Can you ride your bicycle in {{city}}? <br/>
+      Can you ride your bicycle right now in <span id="loading"><img src="loading.gif"/></span> {{city}}?<br/>
       {{response}}
     </div>
+
     <!-- In production use:
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
     -->
